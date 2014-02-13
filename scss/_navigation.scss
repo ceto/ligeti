@@ -1,0 +1,464 @@
+/*! responsive-nav.js v1.0.14 by @viljamis */
+
+
+.js #nav {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+#nav.opened {
+  max-height: 9999px;
+}
+
+#nav-toggle-cont {
+	display:block;
+	box-sizing:border-box;
+	padding:0 1em;
+	text-transform: uppercase;
+	text-align: left;
+	font-size:1.3333333em;
+	line-height:2.5em;
+	//height:2.5em;
+	//font-weight: bold;
+	font-family: $sansFontFamily;
+	color:$grayLight;
+	//padding:2px 0;
+	//background-color: rgba($grayLight,0.35);
+	background: url(images/menu_head.png) repeat-x 220px -155px transparent;
+	text-decoration: none;
+	font-weight: bold;
+	
+
+
+	
+	.small-logo {
+		// display: none;
+		// position:absolute;
+		// left:42%;
+		// top:-2px;
+		// z-index: 1000;
+		img {
+			margin-top:0px;
+			width:64px;
+
+			//display: none;
+		}
+	}
+	#nav-toggle {
+		position: absolute;
+		z-index:1000;
+		top:0.75em;
+		right:1em;
+		&:hover {
+			cursor:pointer;
+		}
+	}
+	
+}
+
+
+@media screen and (min-width: $desktopBreak) {
+  .js #nav {
+    position: relative;
+    max-height: none;
+  }
+
+  
+  #nav-toggle {
+    display: none;
+  }
+  .small-logo {
+  	display: none;
+  }
+}
+
+
+#nav ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: block;
+	list-style: none;
+
+	li {
+		width: 100%;
+  		display: block;
+		border-bottom:1px solid lighten($grayLight,20%);
+		padding:2px 0;
+		&:last-child{
+			border-bottom:none;
+		}
+		
+	}
+
+	a {
+		//@include transition-property(font-size);
+  		//@include transition-duration(300ms);
+		//@include transition-timing-function(ease-in);
+		display:block;
+		text-transform: uppercase;
+		text-align: center;
+		font-size:1.3333333em;
+		line-height:2.5em;
+		//font-weight: bold;
+		font-family: $sansFontFamily;
+		color:$grayMenu;
+
+
+		&:hover {
+				//font-size:1.5em;
+				//color:white;
+				background-color: rgba($grayLight,0.35);
+				text-decoration: none;
+
+		}
+	}
+
+	li.current-menu-item a,li.current-menu-parent a {
+			color:$orange;
+			//font-weight:bold;
+			//font-size:1.5em;
+			//color:white;
+			//background-color: rgba($grayLight,0.35);
+			//text-decoration: none;
+
+	}
+}
+
+
+
+
+
+
+.leftbottom-menu {
+	list-style-type: none;
+	margin:0 auto;
+	text-align: center;
+	font-family: $sansFontFamily;
+
+
+
+	li {
+		display:inline;
+
+	}
+
+	a {
+		padding:0.25em 0.125em;
+		text-transform: uppercase;
+		font-size: 0.75em;
+	}
+}
+
+
+.prodcat-menu {
+	list-style-type: none;
+	margin:0.5em 0 0.25em 0em;
+	//float:right;
+
+
+
+
+	li{
+		float:left;
+	}
+
+	a {
+		display:block;
+
+		font-family: $sansFontFamily;
+		text-transform: uppercase;
+		//font-size:1em;
+		line-height:2em;
+		color:$grayMenu;
+
+		padding:0 1em;
+
+		&.active, &:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+
+	}
+
+
+}
+
+
+.related-menu {
+	margin:0;
+	padding:0;
+
+	list-style-type:none;
+	
+	li {
+		float:left;
+		font-family: $sansFontFamily;
+		text-transform:uppercase;
+		
+		&:after {
+			content:'|';
+			padding:0 0.25em;
+		}
+
+		&:last-child:after {
+			content:none;
+		}
+
+
+		a{
+
+			
+			
+		}
+
+		
+	}
+}
+
+
+
+.breadcrumb {
+	overflow:hidden;
+	padding:0;margin:0;
+	li {
+		list-style-type: none;
+		padding:0;margin:0;
+
+		&:first-child a{
+			padding-left: 2em;
+		}
+		&:last-child a{
+			padding-right: 2em;
+		}
+		&:last-child a:after{
+			content:none;
+		}
+	
+	}
+	
+	a {
+		font-family: $sansFontFamily;
+		text-decoration: none;
+		outline: none;
+		display: block;
+		float: left;
+		font-size: 1em;
+		line-height: 36px;
+		color: white;
+		/*need more margin on the left of links to accomodate the numbers*/
+		padding: 0 10px 0 50px;
+		background: $grayBtn;
+		position: relative;
+
+
+		&:hover {
+		 	background: $orange;
+		 } 
+		&:hover:after{
+			background: $orange;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0; 
+			right: -18px; /*half of square's length*/
+			/*same dimension as the line-height of .breadcrumb a */
+			width: 36px; 
+			height: 36px;
+			/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+			length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+			if diagonal required = 1; length = 1/1.414 = 0.707*/
+			transform: scale(0.707) rotate(45deg); 
+			/*we need to prevent the arrows from getting buried under the next link*/
+			z-index: 1;
+			/*background same as links but the gradient will be rotated to compensate with the transform applied*/
+			background: $grayBtn;
+			/*stylish arrow design using box shadow*/
+			box-shadow: 
+				1px -1px 0 1px rgba($whitePanel, 1), 
+				2px -2px 0 1px rgba(0, 0, 0, 0.2);
+			/*
+				5px - for rounded arrows and 
+				50px - to prevent hover glitches on the border created using shadows*/
+			border-radius: 0 0px 0 50px;
+		}
+
+
+
+	}
+
+}
+
+
+
+
+
+.breadcrumba {
+	list-style-type: none;
+	padding:0;
+	margin:0;
+
+
+	li{
+		display: inline-block;
+		//text-transform:uppercase;
+		font-family: $sansFontFamily;
+		//background: $whitePanel;
+
+		//font-size: 0.875em;
+
+		padding:0 0em 0 0.75em;
+		background: $whiteBg;
+		&:last-child {
+			padding-right:0;
+		}
+		&:first-child {
+			padding-left:0;
+		}
+		&:first-child a:before {
+			content:none;
+		}
+
+		
+
+		a {
+			display:block;
+			position:relative;
+			padding:0 1.5em 0 2em;
+			line-height: 2em;
+			//height:2em;
+			color:$whitePanel;
+			background: $grayBtn;
+
+			&:after {
+				position:absolute;
+				left:100%;
+				content:'';
+				height:0;
+				width:0;
+				border-top: 1em solid transparent;
+				border-bottom: 1em solid transparent;
+				border-left: 0.5em solid $grayBtn;
+				z-index:1;
+				
+				
+			}
+			&:before {
+				position:absolute;
+				right:100%;
+				content:'';
+				height:0;
+				width:0;
+				border-top: 1em solid $grayBtn;
+				border-bottom: 1em solid $grayBtn;
+				border-left: 0.5em solid transparent;
+				z-index:1;
+				
+				
+			}
+
+			&:hover {
+				background: $orange;
+				text-decoration: none;
+				
+
+			}
+
+			&:hover:after {
+					border-left: 0.5em solid $orange;
+			}	
+			&:hover:before {
+				border-top: 1em solid $orange;
+				border-bottom: 1em solid $orange;
+			}	
+			
+
+			
+
+					
+
+		}
+	}
+}
+
+.navigation-post {
+	margin:2em 2em;
+	.previous {
+		width:48%;
+		float:left;
+		text-align:left;
+	}
+	.next {
+		width:48%;
+		float:right;
+		text-align:right;
+
+	}
+
+	a {
+		position:relative;
+		display:inline-block;
+		color:$whiteBg;
+		background: $grayBtn;
+		padding:0.33em 0.75em;
+		font-family: $sansFontFamily;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.875em;
+		height:36px;
+		box-sizing:border-box;
+		&:hover {
+					background: $orange;
+					text-decoration: none;
+					color:$whiteBg;
+		}
+	}
+
+	.previous a {
+		&:after {
+					position:absolute;
+					left:100%;
+					top:0;
+					content:'';
+					height:0;
+					width:0;
+					border-top: 18px solid $grayBtn;
+					border-bottom: 18px solid $grayBtn;
+					border-right: 9px solid transparent;
+					z-index:1;
+				}
+
+		&:hover:after {
+						border-top: 18px solid $orange;
+						border-bottom: 18px solid $orange;
+		}	
+
+	}
+	.next a {
+		&:after {
+					position:absolute;
+					right:100%;
+					top:0;
+					content:'';
+					height:0;
+					width:0;
+					border-top: 18px solid $grayBtn;
+					border-bottom: 18px solid $grayBtn;
+					border-left: 9px solid transparent;
+					z-index:1;
+				}
+
+		&:hover:after {
+						border-top: 18px solid $orange;
+						border-bottom: 18px solid $orange;
+		}	
+
+	}
+
+}

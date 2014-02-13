@@ -1,0 +1,221 @@
+body {
+	background-image:url(images/szurke_bg.jpg);
+	background-repeat:repeat;
+	background-position:left top
+}
+.sitewrap {
+	//max-width: 1608px;
+	//margin:0 auto;
+	//padding:0 2em;
+
+}
+
+.layout {
+	//position:relative;
+
+}
+.left-panel {
+	background: url('images/1985.jpg') no-repeat center 80% $whitePanel;
+	width:320px;
+	position:fixed;
+	bottom:0;
+	top:0;
+	left:0;
+	box-sizing:border-box;
+	//@include box-shadow(15px 0 15px -20px $orange); 
+
+	@media screen and (max-height: 650px) {
+			background-image:none;
+	}
+
+	@media screen and (max-width: $desktopBreak) {
+		position:static;
+		width:auto;
+		float:none;
+		background-image:none;
+
+	}
+
+
+}
+
+.site-header {
+	background: url('images/menu_head.png') repeat-x center top transparent;
+
+	@media screen and (max-width: $desktopBreak) {
+		background: none;
+	}
+
+}
+
+
+
+.right-panel {
+	//background: url('images/korzok.png') repeat-y left top transparent;
+	position:relative;
+	margin-left:320px;
+	//max-width:800px;
+	//border-bottom:3px solid darken($brownText,15%);
+	margin-bottom:4px;
+	padding-bottom:2em;
+
+	box-sizing:border-box;
+
+
+
+	@media screen and (max-width: $desktopBreak) {
+		margin-left:0;
+
+	}
+
+
+	.content-area {
+		min-height: 900px;
+	}
+} 
+
+.footer-panel {
+
+	//background:url('images/menu_head.png') repeat-x left -125px $whitePanel;
+	margin-left:320px;
+	box-sizing:border-box;
+
+	color:$grayLight;
+	//font-family: $sansFontFamily;
+	font-size:0.875em;
+
+	@media screen and (max-width: $desktopBreak) {
+		margin-left:0;
+	
+	}
+
+	// a {
+	// 	color:$whiteBg;
+	// }
+}
+
+
+.splash{
+	background:url(images/luigi.jpg) no-repeat center center $gray;
+	background-size:cover;
+	text-align:center;
+	//height:0;
+	//padding-bottom:78.89%;
+	//padding-bottom:87.89%;
+	position:relative;
+	p {
+		position:absolute;
+		left:0;right:0;
+		top:35%;
+		font-size:2.25em;
+		text-align:center;
+		color:white;
+		font-weight:700;
+		//font-style: italic;
+		//text-transform: uppercase;
+		padding:1em 1em;
+		line-height:1.25em;
+		text-shadow:1px 1px 2px $grayDark;
+		
+		@media screen and (max-width: $mobileBreak) {
+			font-size:1.25em;
+			
+		}
+
+	}
+
+	.homejump {
+		display: inline-block;
+		font-family: $sansFontFamily;
+		text-transform: uppercase;
+		font-weight: bold;
+		line-height:1em;
+		color:white;
+		//background: $grayDark;
+		border:1px solid white;
+		padding:0.75em 2.5em 0.75em;
+		position: absolute;
+		bottom:0;
+		margin-left:-60px;
+		margin-bottom:14em;
+		&:hover {
+			border-color: $orange;
+			color:$orange;
+			text-decoration: none;
+		}
+	}
+
+}
+
+.csplash{
+	background:url(images/ferikapcs.jpg) no-repeat left center $grayDark;
+	background-size:cover;
+	position:relative;
+	height:480px;
+	//padding-bottom:78.89%;
+	//padding-bottom:87.89%;
+	
+	.contact-content {
+		color:white;
+		background: rgba($grayGlass,0.87);
+		box-sizing:border-box;
+		position:absolute;
+		left:0;right:0;bottom:0;
+		//margin:20em 0 0 0;
+		//padding:1em 1em;
+		
+		@media screen and (max-width: $mobileBreak) {
+			margin-top:0;
+			
+		}
+		.hentry {
+			margin-bottom:0;
+		}
+		.entry-content{
+			//margin-top:0;
+			//margin-bottom:0;
+		}
+		
+		p:last-child{
+			margin-bottom: 0;
+		}
+
+		h1 {
+			margin:0;
+			display: none;
+		}
+		h3{
+			color:$grayDark;
+			margin-bottom: 0;
+		}
+
+	}
+
+	
+}
+
+.home #primary{
+	// background-image:url(images/szurke_bg.jpg);
+	// background-repeat:repeat;
+	// background-position:left top
+
+	.entry-title {
+		display:none;
+	}		
+}
+
+
+.mapwrap {
+ 	min-height: 120px;
+ 	position:relative;
+ 	
+ 	#map-canvas {
+ 		position:absolute;
+ 		left:0;right:0;top:0;bottom:0;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+ 	}
+
+}
+

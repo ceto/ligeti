@@ -1,0 +1,32 @@
+/*!
+Theme Name: Ligeti
+Theme URI: http://underscores.me/
+Author: Hydrogenedesign
+Author URI: http://hydrogene.hu
+Description: Wordpress Theme for Ligeti Studio
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Tags:BBBAAA
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+Find out more at Underscores.me.
+*/
+
+//@import "compass/css3";
+//@import "normalize";
+@import "bits";
+@import "fonts";
+@import "helper";
+@import "layout";
+@import "header";
+@import "posts";
+@import "navigation";
+@import "elements";
+@import "prodcat";
+@import "magnific";
+@import "sidebar";
+@import "footer";
+@import "isotope"
+

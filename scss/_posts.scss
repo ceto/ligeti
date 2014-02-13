@@ -1,0 +1,160 @@
+.page-header {
+	margin:0 2em 1em; 
+	@media screen and (max-width:$tabletBreak)  {
+			margin:0 1em 1em;
+	}
+
+	.page-title{
+		font-size: 1.75em;
+		line-height:1.125em;
+		text-transform: uppercase;
+		padding:0;
+		margin:0.75em 0 0;
+
+	}
+}
+.blog {
+	
+	article.post {
+		margin:0 2em 3em;
+		@media screen and (max-width:$tabletBreak)  {
+			margin:0 1em 2em;
+		}
+
+
+	}
+
+	.entry-header {
+		border-top:1px solid $grayLight;
+		border-bottom:1px solid $grayLight;
+		margin:0 0 0.5em;
+		padding:0.25em 0 0.125em;
+	
+
+		.entry-title{
+			float:left;
+			font-size: 1.25em;
+			line-height:1.25em;
+			text-transform: uppercase;
+			margin:0;
+			padding:0 0em;
+			//font-family: $serifFontFamily;
+			a {
+				color:$brownText;
+				&:hover {
+					text-decoration: none;
+					color:$orange;
+				}
+			}
+
+		}
+		.entry-meta {
+			float:right;
+			margin:0;
+			padding:0;
+		}
+
+	}
+	.entry-figure {
+		margin:0 1em 0 0;
+		padding:0;
+		float:left;
+	}
+	.entry-sajto {
+		text-transform: uppercase;
+		font-size: 0.875em;
+	}
+}
+
+.single-post {
+	article.post {
+		margin:2em 2em;
+		@media screen and (max-width:$tabletBreak)  {
+			margin:2em 1em;
+		}
+	}
+
+
+	.entry-header {
+
+
+		position:relative;
+		z-index:-1;
+		
+	
+
+		.entry-title{
+			border-top:1px solid $grayLight;
+			border-bottom:1px solid $grayLight;
+			margin:0 0;
+			padding:0.25em 0 0.125em;
+			font-size: 1.25em;
+			line-height:1.25em;
+			text-transform: uppercase;
+
+			//margin-right:5em;
+			padding-right:3em;
+			//display:inline-block;
+			//font-family: $serifFontFamily;
+			a {
+				color:$brownText;
+				&:hover {
+					text-decoration: none;
+					color:$orange;
+				}
+			}
+
+		}
+		.entry-meta {
+			position:absolute;
+			bottom:0;
+			right:0;
+			//float:right;
+			//display: inline;
+			margin:0;
+			padding:0;
+			font-size: 0.875em;
+		}
+
+	}
+	.entry-figure {
+		margin:0 1em 0 0;
+		padding:0;
+		float:left;
+		@media screen and (max-width:$mobileBreak)  {
+			margin:0 0 1em;
+			float:none;
+		}
+	}
+	.entry-sajto {
+		text-transform: uppercase;
+		font-size: 0.875em;
+		margin-top:0.5em;
+	}
+}
+
+
+.page{
+	.entry-content {
+		margin:2em 2em;
+		@media screen and (max-width:$tabletBreak)  {
+			margin:2em 1em;
+		}
+	}
+}
+
+h2 {
+	text-transform: uppercase;
+}
+
+.page-template-tmpl_home-php .content-area{
+	.row-fluid{
+		margin-bottom:1em;
+	}
+	img {
+		margin-top:2em;
+	}
+	h2 {
+		margin-top:1em;
+	}
+}

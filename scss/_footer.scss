@@ -1,0 +1,29 @@
+.site-info {
+ padding:1em 1em;
+
+
+}
+.tothetop{
+	text-align: right;
+	float:right;
+	a {
+		text-align: center;
+		display:inline-block;
+		background: $grayBtn;
+		text-transform: uppercase;
+		//font-family: $sansFontFamily;
+		padding:0.25em 1em 1em;
+		font-size: 0.875em;
+		line-height:0.75em;
+		color:$whiteBg;
+	
+		&:hover {
+			text-decoration: none;
+			color:$orange;
+			background: $grayDark;
+		}
+	}
+	i{
+		display: block;
+	}
+}
