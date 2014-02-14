@@ -32,6 +32,12 @@ Find out more at Underscores.me.
   src: url("./fonts/Georgia-Pro-Italic.eot") format("embedded-opentype"), url("./fonts/Georgia-Pro-Italic.woff") format("woff"), url("./fonts/Georgia-Pro-Italic.ttf") format("truetype"), url("./fonts/Georgia-Pro-Italic.svg#web") format("svg");
   font-weight: 400;
   font-style: italic; }
+@font-face {
+  font-family: 'Georgia-Pro';
+  src: url("./fonts/Georgia-Pro-Bold-Italic.eot");
+  src: url("./fonts/Georgia-Pro-Bold-Italic.eot") format("embedded-opentype"), url("./fonts/Georgia-Pro-Bold-Italic.woff") format("woff"), url("./fonts/Georgia-Pro-Bold-Italic.ttf") format("truetype"), url("./fonts/Georgia-Pro-bold-Italic.svg#web") format("svg");
+  font-weight: 700;
+  font-style: italic; }
 /* Alignment */
 .alignleft {
   display: inline;
@@ -363,7 +369,7 @@ body {
       margin-left: 0; } }
 
 .splash {
-  background: url(images/luigi.jpg) no-repeat center center #8c8c8c;
+  background: url(images/kori.jpg) no-repeat center center #8c8c8c;
   background-size: cover;
   text-align: center;
   position: relative; }
@@ -982,7 +988,26 @@ form textarea {
 
 .single-product .prod-figure {
   position: relative;
-  margin: 0; }
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 50%;
+  max-width: 1600px;
+  margin: 0;
+  background-color: #1d1309;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  @media screen and (min-width: 1920px) {
+    .single-product .prod-figure {
+      padding-bottom: 800px; } }
+  @media screen and (max-width: 600px) {
+    .single-product .prod-figure {
+      min-height: 280px;
+      padding-bottom: 0; } }
+  @media screen and (max-width: 480px) {
+    .single-product .prod-figure {
+      min-height: 240px;
+      padding-bottom: 0; } }
 .single-product .prod-bread {
   margin: 0em 0em;
   padding: 0;
@@ -1101,14 +1126,14 @@ form textarea {
       font-size: 1em;
       font-size: 1em;
       font-style: italic;
-      font-weight: bold;
+      font-weight: 700;
       color: #95704e; }
     .single-product .prod-content .quote footer {
       margin-top: 1em;
       padding-top: 0.5em;
       border-top: 1px solid #b5ada5;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 400;
       font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 0.875em; }
   .single-product .prod-content .data {

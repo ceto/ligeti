@@ -65,11 +65,14 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 								$termes = join(" ", $termik );
 							?>
 							<article id="product-<?php the_ID(); ?>" <?php post_class($termes.' obj mutat'); ?>>
-								
-							<?php if (has_post_thumbnail() ) :?>
+							<?php
+								$ima = get_post_meta( $post->ID, '_cmb_photo_1_id', true );
+								$imci = wp_get_attachment_image_src( $ima, 'medium43');
+							?>
+							<?php if ($imci[0]!='' ) :?>
 								<figure class="prod-thumb">
 									<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'ligeti' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
-										<?php the_post_thumbnail( 'medium43');?>
+										<img width="<?php echo $imci[1]; ?>" height="<?php echo $imci[2]; ?>" src="<?php echo $imci[0]; ?>" alt="<?php echo the_title(); ?>" />
 									</a>
 								</figure>
 							<?php else : ?>
@@ -90,7 +93,6 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 										<span class="prod-year"><?php echo '’'.substr(get_post_meta( get_the_ID(), '_cmb_date', true ),2); ?></span>
 									</a>
 								</h3>
-								<?php edit_post_link( __( 'Edit', 'ustedalen' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 							</article><!-- #furniture-## .obj-->
 				<?php // echo (($i%3)==0)?'</div><!-- .row-fluid -->':''; ?>
 			<?php endwhile; ?>

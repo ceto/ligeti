@@ -15,23 +15,14 @@ get_header(); ?>
 
 			<article id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
-				<?php if (has_post_thumbnail() ) :?>
-						<figure class="prod-figure">
-								<?php the_post_thumbnail( 'large21');?>
-								<div class="prod-nav clearfix">
-									<?php ligeti_product_nav(); ?>
-								</div>
-						</figure>
-					<?php else : ?>
-						<figure class="prod-figure">
-							<img src="http://placeimg.com/1600/800/arch" />
-							<div class="prod-nav clearfix">
-									<?php ligeti_product_nav(); ?>
-							</div>
+				<?php $imci = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large21' ); ?>
+				<figure class="prod-figure" style="background-image:url('<?php echo $imci[0];?>'); max-width: <?php echo $imci[1];?>;max-height: <?php echo $imci[2];?>;">
+						<?php //the_post_thumbnail( 'large21');?>
+						<div class="prod-nav clearfix">
+							<?php ligeti_product_nav(); ?>
+						</div>
+				</figure>
 
-						</figure>
-
-					<?php endif; ?>
 
 				<header class="prod-header">
 					
