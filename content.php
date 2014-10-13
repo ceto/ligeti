@@ -38,11 +38,7 @@
 	<?php else : ?>
 	<div class="entry-content">
 		<?php the_content( __( 'Teljes cikk', 'ligeti' ) ); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'ligeti' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<footer class="entry-meta">
-		<?php edit_post_link( __( 'Edit', 'ligeti' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

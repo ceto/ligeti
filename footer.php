@@ -38,7 +38,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 
-        <?php if ( is_front_page() ) : ?>
+        <?php if ( is_front_page() || is_page_template('tmpl_contact.php') ) : ?>
         <script>
           jQuery(document).ready(function(){
               resizeDiv();
@@ -52,6 +52,7 @@
               vpw = $(window).width(); 
               vph = $(window).height(); 
               $('.splash').css({'height': vph + 'px'});
+              $('.csplash').css({'height': vph + 'px'});
           }
           </script>
         <?php endif; ?>
