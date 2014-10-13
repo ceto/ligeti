@@ -1,5 +1,5 @@
 .single-product {
-	
+
 	.prod-figure {
 		position:relative;
 		overflow: hidden;
@@ -173,13 +173,13 @@
 		box-sizing:border-box;
 		max-width: 980px;
 		text-transform: uppercase;
-		margin:1em 1em 0em 1em;
+		margin:1em 1em 0em 0.666em;
 		padding: 0;
 		line-height:1.25em;
 		//background: $grayDark;
 		//color:$whitePanel;
 		@media screen and (max-width:$tabletBreak) {
-			margin:1em 0.5em 0em 0.5em;
+			margin:1em 0.5em 0em 0.25em;
 				
 		}
 	}
@@ -239,6 +239,8 @@
 		}
 		.data {	
 			width:70%;
+			border-bottom:1px solid $grayLight;
+			padding-bottom: 1em;
 
 			box-sizing:border-box;
 			@media screen and (max-width:$tabletBreak) {
@@ -251,19 +253,21 @@
 	}
 
 	.prod-lenyeg {
-		border-top:1px solid $grayLight;
-		border-bottom:1px solid $grayLight;
-		padding-top:1em;
+		font-size: 0.875em;
+		line-height: 1.4;
+
+		padding-top:0;
 		padding-bottom:1em;
 		//background: $whitePanel;
 		margin-top:2em;
-		margin-bottom:2em;
+		margin-bottom:0;
 		position:relative;
 	}
 	.prod-params{
 		p {
 			//margin:0;
 			//padding:0;
+			margin-bottom: 0.5em;
 		}
 		.name {
 			text-transform: uppercase;
@@ -313,8 +317,8 @@
 		max-width: 980px;
 		box-sizing:border-box;
 		margin:1em 2em 1em;
-		padding:0.5em 0 12em;
-		background:url(images/butorgya_pikt.png) no-repeat center bottom transparent;
+		padding:0.5em 0 2em;
+		//background:url(images/butorgya_pikt.png) no-repeat center bottom transparent;
 
 		//border-top:10px solid $gray;
 		@media screen and (max-width:$tabletBreak) {
@@ -393,8 +397,10 @@
 		max-width: 980px;
 		box-sizing:border-box;
 		margin:1em 2em 2em;
-		padding:0.5em 0;
-		border-top:10px solid $gray;
+		padding:2em 0;
+		border-top:1px solid $gray;
+		font-size: 0.875em;
+		line-height: 1.4;
 
 		@media screen and (max-width:$tabletBreak) {
 			margin:1em 1em 0;
@@ -402,9 +408,11 @@
 		}
 
 		h3 {
-			text-transform:uppercase;
+			//text-transform:uppercase;
 			margin:0 0 0.25em;
 			line-height:1.25em;	
+			font-weight: normal;
+			font-size: 1em;
 		}
 	}
 	
@@ -572,7 +580,7 @@
 				right:0.875em;
 				bottom:0.875em;
 
-				padding:15% 0.5em;
+				padding:27% 0.5em;
 
 				font-family:$sansFontFamily;
 				text-align:center;

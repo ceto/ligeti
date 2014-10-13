@@ -17,35 +17,7 @@ get_header(); ?>
 		<p>Ritka szerencse, ha a tervező, az építészeti-, belsőépítészi munkákat együtt gondolja át,
 			és saját bútoraival rendezi be a teret
 		</p>
-		<a href="#tartalom" class="ugrogomb homejump">Tovább</a>
 	</div>
 	<a name="tartalom"></a>	
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-	
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				
-
-				<?php
-					get_template_part( 'content', get_post_format() );
-				?>
-
-			<?php endwhile; ?>
-
-			<?php ligeti_content_nav( 'nav-below' ); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'no-results', 'index' ); ?>
-
-		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>

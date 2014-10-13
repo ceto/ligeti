@@ -13,11 +13,10 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 Find out more at Underscores.me.
 */
-
 //@import "compass/css3";
 //@import "normalize";
 @import "bits";
-@import "fonts";
+//@import "fonts";
 @import "helper";
 @import "layout";
 @import "header";
@@ -28,5 +27,4 @@ Find out more at Underscores.me.
 @import "magnific";
 @import "sidebar";
 @import "footer";
-@import "isotope"
-
+@import "isotope";

@@ -90,7 +90,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 								<h3 class="prod-title">
 									<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'ligeti' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
 										<?php the_title(); ?>
-										<span class="prod-year"><?php echo '’'.substr(get_post_meta( get_the_ID(), '_cmb_date', true ),2); ?></span>
+										<!--span class="prod-year"><?php echo '’'.substr(get_post_meta( get_the_ID(), '_cmb_date', true ),2); ?></span-->
 									</a>
 								</h3>
 							</article><!-- #furniture-## .obj-->

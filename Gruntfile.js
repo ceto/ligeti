@@ -1,6 +1,24 @@
 'use strict';
 module.exports = function(grunt) {
 
+  //grunt.loadNpmTasks('grunt-text-replace');
+  
+  // Load all tasks
+  require('load-grunt-tasks')(grunt);
+  //require('jit-grunt')(grunt);
+
+  // Show elapsed time
+  require('time-grunt')(grunt);
+
+
+  
+
+
+  var jsFileList = [
+    'js/plugins/*.js',
+    'js/_*.js'
+  ];
+
   grunt.initConfig({
     jshint: {
       options: {
@@ -8,66 +26,97 @@ module.exports = function(grunt) {
       },
       all: [
         'Gruntfile.js',
-        'js/*.js'
+        'js/*.js',
+        '!/js/deploy/*.js',
       ]
+    },
+    sass: {
+      dev: {
+        options: {
+          outputStyle: 'nested',
+          sourceMap: true
+        },
+        files: { 'css/main.css': 'scss/style.scss' }
+      },
+      build: {
+        options: {
+          outputStyle: 'compressed',
+          sourceMap: true
+        },
+        files: { 'css/main.min.css': 'scss/style.scss' }
+      }
+
+    },
+    replace: {
+      default: {
+        src: ['css/*.css.map'],
+        overwrite: true,                 // overwrite matched source files
+        replacements: [{
+          from: 'scss/',
+          to: '../scss/'
+        }]
+      }
+    },
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: [jsFileList],
+        dest: 'js/deploy/scripts.min.js',
+      },
     },
     uglify: {
       dist: {
-        options: {
-          beautify: true,
-          mangle: false,
-          compress: false
-        },
         files: {
-          'js/deploy/scripts.min.js': [
-            'js/plugins/*.js',
-            'js/_*.js'
-          ]
-        }
-      }
-    },
-    /*version: {
-      options: {
-        file: 'lib/scripts.php',
-        css: 'assets/css/main.min.css',
-        cssHandle: 'roots_main',
-        js: 'assets/js/scripts.min.js',
-        jsHandle: 'roots_scripts'
-      }
-    },*/
-    sass: {
-      dist: {
-        options: {
-         style: 'nested',
-         /*noCache: true,*/
-         sourcemap: true
-        },
-        files: {
-          'css/main.css': 'scss/style.scss'
+          'js/deploy/scripts.min.js': [jsFileList]
         }
       }
     },
     autoprefixer: {
-      dist: {
+      options: {
+        browsers: ['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12']
+      },
+      dev: {
         options: {
-            map: true
+          map: true
         },
         src: 'css/main.css',
         dest: 'style.css'
+      },
+      build: {
+        options: {
+          map: true
+        },
+        src: 'css/main.min.css',
+        dedest: 'style.css'
+      }
+    },
+    notify: {
+      options: {
+        enabled: true,
+        max_jshint_notifications: 5, // maximum number of notifications from jshint output
+        title: "Project Name" // defaults to the name in package.json, or will use project directory's name
       }
     },
     watch: {
       sass: {
         files: [
-          'scss/*.scss'
+          'scss/*.scss',
+          'scss/**/*.scss'
         ],
-        tasks: ['sass', 'autoprefixer'/*, 'version'*/]
+        tasks: [
+          'sass:dev', 
+          'replace',
+          'autoprefixer:dev'
+        ]
       },
       js: {
         files: [
+          jsFileList,
           '<%= jshint.all %>'
         ],
-        tasks: ['jshint', 'uglify'/*, 'version'*/]
+        tasks: ['jshint', 'concat']
       },
       livereload: {
         // Browser live reloading
@@ -78,39 +127,33 @@ module.exports = function(grunt) {
         files: [
           'style.css',
           'js/deploy/scripts.min.js',
-          '*.php',
-          '!functions.php'
+          'templates/*.php',
+          '*.php'
         ]
       }
-    },
-    clean: {
-      dist: [
-        'style.css',
-        'js/deploy/scripts.min.js'
-      ]
     }
   });
-
-  // Load tasks
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-wp-version');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-autoprefixer');
 
 
   // Register tasks
   grunt.registerTask('default', [
-    'clean',
-    'sass',
-    'uglify',
-    'version',
-    'autoprefixer'
+    'dev'
   ]);
   grunt.registerTask('dev', [
-    'watch'
+    'jshint',
+    'sass:dev',
+    'replace',
+    'autoprefixer:dev',
+    'concat',
+    'notify'
+  ]);
+  grunt.registerTask('build', [
+    'jshint',
+    'sass:build',
+    'replace',
+    'autoprefixer:build',
+    'uglify',
+    'notify'
   ]);
 
 };

@@ -66,9 +66,9 @@ get_header(); ?>
 						</blockquote>
 					<?php endif; ?>
 					<div class="data clearfix">
-						<div class="prod-date">
+						<!--div class="prod-date">
 							<span><?php echo '’'.substr(get_post_meta( get_the_ID(), '_cmb_date', true ),2); ?></span>
-						</div>
+						</div-->
 						<?php the_content(); ?>
 					</div>
 				
@@ -132,10 +132,10 @@ get_header(); ?>
 
 							</div>	
 							<?php endif; ?>
-							<div class="prod-actionblock">
+							<!--div class="prod-actionblock">
 								<button class="btn btn-inverse">Kapcsolatfelvétel</button>
 								<span class="telcsi">Tel: +36 70 7705653 </span>
-							</div>
+							</div-->
 							</div><!-- /.span4 -->
 						</div>
 

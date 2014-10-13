@@ -15,7 +15,7 @@ body {
 
 }
 .left-panel {
-	background: url('images/1985.jpg') no-repeat center 80% $whitePanel;
+	//background: url('images/1985.jpg') no-repeat center 80% $whitePanel;
 	width:320px;
 	position:fixed;
 	bottom:0;
@@ -75,14 +75,14 @@ body {
 } 
 
 .footer-panel {
-
+	text-align: center;
 	//background:url('images/menu_head.png') repeat-x left -125px $whitePanel;
 	margin-left:320px;
 	box-sizing:border-box;
 
 	color:$grayLight;
 	//font-family: $sansFontFamily;
-	font-size:0.875em;
+	font-size:0.75em;
 
 	@media screen and (max-width: $desktopBreak) {
 		margin-left:0;
@@ -106,16 +106,17 @@ body {
 	p {
 		position:absolute;
 		left:0;right:0;
-		top:35%;
-		font-size:2.25em;
-		text-align:center;
-		color:white;
-		font-weight:700;
+		bottom:0;
+		font-size:1em;
+		text-align:left;
+		color:$brownQuote;
+		font-weight:40;
 		//font-style: italic;
 		//text-transform: uppercase;
 		padding:1em 1em;
 		line-height:1.25em;
 		text-shadow:1px 1px 2px $grayDark;
+		max-width: 325px;
 		
 		@media screen and (max-width: $mobileBreak) {
 			font-size:1.25em;

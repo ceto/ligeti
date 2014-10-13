@@ -82,7 +82,7 @@ $caption-subtitle-color: #BDBDBD;
   background: $overlay-color;
   opacity: $overlay-opacity;
   @if $IE7support { 
-    filter: alpha(opacity=$overlay-opacity*100);
+    //filter: alpha(opacity=$overlay-opacity*100);
   }
 }
 
