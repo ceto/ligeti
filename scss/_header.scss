@@ -70,13 +70,13 @@
 .sidebar-leftbottom {
 	position:absolute;
 	left:0;
-	bottom:5em;
+	bottom:8em;
 	box-sizing:border-box;
 	width:320px;
 	padding:1em 1em;
 	text-align: center;
 	font-family: $sansFontFamily;
-	font-size: 0.75em;
+	font-size: 0.875em;
 	line-height:1.25em;
 
 	@media screen and (max-width: $desktopBreak) {
@@ -105,5 +105,11 @@
 		width:auto;
 		display:none;
 
+	}
+	p{
+		font-size:0.75em;
+		line-height:1.2;
+		margin:0;
+		text-align:center;
 	}
 }

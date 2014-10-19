@@ -5,7 +5,9 @@
 }
 .tothetop{
 	text-align: right;
-	float:right;
+	position:absolute;
+	right:1em;
+	bottom:1em;
 	a {
 		text-align: center;
 		display:inline-block;

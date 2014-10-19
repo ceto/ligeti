@@ -16,7 +16,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 	<div id="primary" class="content-area ">
 		<div id="content" class="site-content clearfix productlista" role="main">
 
-			<div class="product-filter collapse">
+<!-- 			<div class="product-filter collapse">
 					<?php $furni_cats = get_terms('prodcat', array(
 							 	'parent'    => $term->term_id,
 							 	'hide_empty' => 1
@@ -42,14 +42,13 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 					    <?php endforeach ?>
 
 			  		</ul>
-				</div><!-- .product-filter -->
+				</div> -->
 
-				<h3 class="toggle-filter"><a href="#" data-toggle="collapse" data-target=".product-filter">
+<!-- 				<h3 class="toggle-filter"><a href="#" data-toggle="collapse" data-target=".product-filter">
 					<i class="icon-align-justify"></i> <?php echo $term->name; ?>
-				</a></h3>
+				</a></h3> -->
 
 			<div class="product-listing clearfix">
-
 
 		<?php $i=1; ?>
 

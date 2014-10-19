@@ -375,6 +375,9 @@
 
 				a {
 					display:block;
+					&:hover, &:focus {
+						cursor: zoom-in;
+					}
 					img {
 						
 
@@ -396,8 +399,8 @@
 	.prod-related {
 		max-width: 980px;
 		box-sizing:border-box;
-		margin:1em 2em 2em;
-		padding:2em 0;
+		margin:1em 2em 0;
+		padding:2em 0 1em;
 		border-top:1px solid $gray;
 		font-size: 0.875em;
 		line-height: 1.4;
@@ -539,9 +542,12 @@
 			
 			a{
 				display:block;
+				filter: sepia(0.25);
+				transition:all 0.4s;
 				
 
-				&:hover {
+				&:hover, &:focus {
+					filter: sepia(0);
 				
 				}
 			

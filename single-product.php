@@ -17,16 +17,15 @@ get_header(); ?>
 				
 				<?php $imci = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large21' ); ?>
 				<figure class="prod-figure" style="background-image:url('<?php echo $imci[0];?>'); max-width: <?php echo $imci[1];?>;max-height: <?php echo $imci[2];?>;">
-						<?php //the_post_thumbnail( 'large21');?>
-						<div class="prod-nav clearfix">
+						<!--div class="prod-nav clearfix">
 							<?php ligeti_product_nav(); ?>
-						</div>
+						</div-->
 				</figure>
 
 
 				<header class="prod-header">
 					
-					<div class="prod-bread clearfix">
+					<!--div class="prod-bread clearfix">
 						<ul class="breadcrumb">
 							<?php
 								
@@ -48,7 +47,7 @@ get_header(); ?>
 
 
 						</ul>
-					</div>
+					</div-->
 					
 					
 					<h1 class="prod-title"><?php the_title(); ?></h1>
@@ -187,18 +186,17 @@ get_header(); ?>
 					              	<?php echo $posta->post_title; ?></a>
 					            </li>
 					        <?php endforeach ?>
-					        <li>
+<!-- 					        <li>
 					            <a href="?prodcat=<?php echo $osanya; ?>#<?php echo $term->slug; ?>">
 					                 <?php echo $term->name; ?> kategória összes találata
 					            </a>
-					        </li>
+					        </li> -->
 						</ul>
 					</div>
 				<?php endif; ?>
 
 
 				<footer class="prod-meta">
-					<?php edit_post_link( __( 'Edit', 'ligeti' ), '<span class="edit-link">', '</span>' ); ?>
 
 				</footer><!-- .prod-meta -->
 			</article><!-- #product-## -->

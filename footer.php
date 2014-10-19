@@ -12,16 +12,9 @@
 	</div><!-- #main .rightpanel -->
 
 	<footer class="footer-panel clearfix" role="contentinfo">
-		<div class="site-info">
       <div class="tothetop">
         <a class="ugrogomb" href="#top"><i class="icon-caret-up icon-2x"></i>Top</a>
       </div>
-			<?php do_action( 'ligeti_credits' ); ?>
-			© 2013 <a href="http://ligetidesign.hu/">Ligeti Stúdió</a> <span class="sep"> | </span>
-			Minden jog fenntartva <span class="sep"> | </span>
-			Design by <a href="http://hydrogene.hu" rel="designer">Hydrogene</a>
-      
-		</div><!-- .site-info -->
 	</footer><!--.site-footer -->
 
 </div><!-- .site-->
