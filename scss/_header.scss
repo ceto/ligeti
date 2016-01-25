@@ -2,7 +2,7 @@
 
 	padding:0 1em;
 	text-align:center;
-	margin:1em 0 0.25em;
+	margin:1.25em 0 0.25em;
 
 	@media screen and (max-height: 650px) {
 		margin-top:1em;
@@ -18,7 +18,7 @@
 	display:block;
 	box-sizing:border-box;
 	max-width:210px;
-	margin:0 auto 4em auto;
+	margin:0 auto 2.25em auto;
 
 	font-family: $sansFontFamily;
 	font-size: 0.875em;
@@ -29,11 +29,11 @@
 	text-align:center;
 	//border-top:1px solid $grayRnr;
 	//border-bottom:1px solid $grayRnr;
-	
+
 	@media screen and (max-height: 650px) {
 		margin-bottom:2.5em;
 	}
-	
+
 	@media screen and (max-width:$desktopBreak) {
 		margin-bottom:0;
 		display:none;
@@ -41,7 +41,7 @@
 		left:40%;
 		top:0.5em;
 	}
-	
+
 	 &:after, &:before{
 	 	content: "";
 		font-family: FontAwesome;
@@ -62,7 +62,7 @@
 		margin:0 1.5em;
 	}
 }
-	
+
 
 
 
@@ -70,13 +70,13 @@
 .sidebar-leftbottom {
 	position:absolute;
 	left:0;
-	bottom:8em;
+	bottom:10em;
 	box-sizing:border-box;
 	width:320px;
 	padding:1em 1em;
 	text-align: center;
 	font-family: $sansFontFamily;
-	font-size: 0.875em;
+	font-size: 0.75em;
 	line-height:1.25em;
 
 	@media screen and (max-width: $desktopBreak) {
@@ -95,7 +95,7 @@
 .menu-left-bottom-container {
 	position:absolute;
 	left:0;
-	bottom:0.5em;
+	bottom:1em;
 	box-sizing:border-box;
 	width:320px;
 	padding:1em 1em;
@@ -108,7 +108,7 @@
 	}
 	p{
 		font-size:0.75em;
-		line-height:1.2;
+		line-height:1.4;
 		margin:0;
 		text-align:center;
 	}

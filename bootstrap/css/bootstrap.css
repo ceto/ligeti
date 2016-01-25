@@ -208,18 +208,18 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 24px;
-  color: #69625b;
+  color: #9b9187;
   background-color: #ededed;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 a {
-  color: #d26400;
+  color: #b5ada5;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #854000;
+  color: #69625b;
   text-decoration: underline;
 }
 .img-rounded {

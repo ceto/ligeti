@@ -31,26 +31,6 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 
-        <?php if ( is_front_page() || is_page_template('tmpl_contact.php') ) : ?>
-        <script>
-          jQuery(document).ready(function(){
-              resizeDiv();
-            });
-
-          window.onresize = function(event) {
-              resizeDiv();
-          }
-
-          function resizeDiv() {
-              vpw = $(window).width(); 
-              vph = $(window).height(); 
-              $('.splash').css({'height': vph + 'px'});
-              $('.csplash').css({'height': vph + 'px'});
-          }
-          </script>
-        <?php endif; ?>
-
-
 <?php if ( is_page_template( 'xxxtmpl_contact.php' ) ) : ?>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
@@ -67,7 +47,7 @@
 
     google.maps.event.addDomListener(window, 'load', initialize);
 
-    
+
 
     jQuery(document).ready(function(){
        resizeMap();
@@ -78,8 +58,8 @@
     }
 
     function resizeMap() {
-          vpw = $(window).width(); 
-          vph = $(window).height(); 
+          vpw = $(window).width();
+          vph = $(window).height();
           $('.mapwrap').css({'height': vph/2 + 'px'});
     }
 

@@ -31,10 +31,10 @@
 	background: url(images/menu_head.png) repeat-x 220px -155px transparent;
 	text-decoration: none;
 	font-weight: bold;
-	
 
 
-	
+
+
 	.small-logo {
 		// display: none;
 		// position:absolute;
@@ -57,7 +57,7 @@
 			cursor:pointer;
 		}
 	}
-	
+
 }
 
 
@@ -67,7 +67,7 @@
     max-height: none;
   }
 
-  
+
   #nav-toggle {
     display: none;
   }
@@ -87,12 +87,12 @@
 	li {
 		width: 100%;
   		display: block;
-		border-bottom:1px solid lighten($grayLight,20%);
+		//border-bottom:1px solid lighten($grayLight,20%);
 		padding:2px 0;
 		&:last-child{
 			border-bottom:none;
 		}
-		
+
 	}
 
 	a {
@@ -102,8 +102,8 @@
 		display:block;
 		text-transform: uppercase;
 		text-align: center;
-		font-size:1.3333333em;
-		line-height:2.5em;
+		font-size:1.25em;
+		line-height:2.25em;
 		//font-weight: bold;
 		font-family: $sansFontFamily;
 		color:$grayMenu;
@@ -116,10 +116,14 @@
 				text-decoration: none;
 
 		}
+
+		@media screen and (max-width:$desktopBreak) {
+			line-height: 3em;
+		}
 	}
 
 	li.current-menu-item a,li.current-menu-parent a {
-			color:$orange;
+			color:$grayGlass;
 			//font-weight:bold;
 			//font-size:1.5em;
 			//color:white;
@@ -194,11 +198,11 @@
 	padding:0;
 
 	list-style-type:none;
-	
+
 	li {
 		float:left;
 		font-family: $sansFontFamily;
-		
+
 		&:after {
 			content:'|';
 			padding:0 0.25em;
@@ -211,11 +215,11 @@
 
 		a{
 
-			
-			
+
+
 		}
 
-		
+
 	}
 }
 
@@ -237,9 +241,9 @@
 		&:last-child a:after{
 			content:none;
 		}
-	
+
 	}
-	
+
 	a {
 		font-family: $sansFontFamily;
 		text-decoration: none;
@@ -257,7 +261,7 @@
 
 		&:hover {
 		 	background: $orange;
-		 } 
+		 }
 		&:hover:after{
 			background: $orange;
 		}
@@ -265,25 +269,25 @@
 		&:after {
 			content: '';
 			position: absolute;
-			top: 0; 
+			top: 0;
 			right: -18px; /*half of square's length*/
 			/*same dimension as the line-height of .breadcrumb a */
-			width: 36px; 
+			width: 36px;
 			height: 36px;
-			/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+			/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's:
 			length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
 			if diagonal required = 1; length = 1/1.414 = 0.707*/
-			transform: scale(0.707) rotate(45deg); 
+			transform: scale(0.707) rotate(45deg);
 			/*we need to prevent the arrows from getting buried under the next link*/
 			z-index: 1;
 			/*background same as links but the gradient will be rotated to compensate with the transform applied*/
 			background: $grayBtn;
 			/*stylish arrow design using box shadow*/
-			box-shadow: 
-				1px -1px 0 1px rgba($whitePanel, 1), 
+			box-shadow:
+				1px -1px 0 1px rgba($whitePanel, 1),
 				2px -2px 0 1px rgba(0, 0, 0, 0.2);
 			/*
-				5px - for rounded arrows and 
+				5px - for rounded arrows and
 				50px - to prevent hover glitches on the border created using shadows*/
 			border-radius: 0 0px 0 50px;
 		}
@@ -324,7 +328,7 @@
 			content:none;
 		}
 
-		
+
 
 		a {
 			display:block;
@@ -345,8 +349,8 @@
 				border-bottom: 1em solid transparent;
 				border-left: 0.5em solid $grayBtn;
 				z-index:1;
-				
-				
+
+
 			}
 			&:before {
 				position:absolute;
@@ -358,29 +362,29 @@
 				border-bottom: 1em solid $grayBtn;
 				border-left: 0.5em solid transparent;
 				z-index:1;
-				
-				
+
+
 			}
 
 			&:hover {
 				background: $orange;
 				text-decoration: none;
-				
+
 
 			}
 
 			&:hover:after {
 					border-left: 0.5em solid $orange;
-			}	
+			}
 			&:hover:before {
 				border-top: 1em solid $orange;
 				border-bottom: 1em solid $orange;
-			}	
-			
+			}
 
-			
 
-					
+
+
+
 
 		}
 	}
@@ -436,7 +440,7 @@
 		&:hover:after {
 						border-top: 18px solid $orange;
 						border-bottom: 18px solid $orange;
-		}	
+		}
 
 	}
 	.next a {
@@ -456,7 +460,7 @@
 		&:hover:after {
 						border-top: 18px solid $orange;
 						border-bottom: 18px solid $orange;
-		}	
+		}
 
 	}
 

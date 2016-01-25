@@ -10,12 +10,12 @@ function create_product_type() {
 				'singular_name' => __( 'product' ),
 				'add_new_item'  => __( 'Add New Product' ),
 				'edit_item'		=> __( 'Edit Product' ),
-				'all_items'		=> __( 'All Products' ) 
-				
+				'all_items'		=> __( 'All Products' )
+
 			),
 		'public' => true,
 		'has_archive' => true,
-		'rewrite' => array('slug' => 'products'),
+		'rewrite' => array('slug' => 'referencia'),
 		'supports' => array('title', 'thumbnail', 'editor')
 		)
 	);
@@ -28,7 +28,7 @@ function create_product_type() {
 add_action( 'init', 'create_pcategory_taxonomies', 0 );
 
 //create two taxonomies, genres and writers for the post type "book"
-function create_pcategory_taxonomies() 
+function create_pcategory_taxonomies()
 {
 
  $labels = array(
@@ -38,12 +38,12 @@ function create_pcategory_taxonomies()
     'all_items'           => __( 'All Product Categorys' ),
     'parent_item'         => __( 'Parent Product Category' ),
     'parent_item_colon'   => __( 'Parent Product Category:' ),
-    'edit_item'           => __( 'Edit Product Category' ), 
+    'edit_item'           => __( 'Edit Product Category' ),
     'update_item'         => __( 'Update Product Category' ),
     'add_new_item'        => __( 'Add New Product Category' ),
     'new_item_name'       => __( 'New Product Category Name' ),
     'menu_name'           => __( 'Product Category' )
-  ); 	
+  );
 
   $args = array(
     'hierarchical'        => true,
@@ -52,7 +52,7 @@ function create_pcategory_taxonomies()
     'show_ui'             => true,
     'show_admin_column'   => true,
     'query_var'           => true,
-    'rewrite'             => array( 'slug' => 'product-category' )
+    'rewrite'             => array( 'slug' => 'referenciacsoport' )
   );
 
   register_taxonomy( 'prodcat', array( 'product' ), $args );
@@ -72,7 +72,7 @@ function single_metaboxes( $meta_boxes ) {
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
-						
+
 			array(
 				'name' => __('Sajtó cikk, és forrás'),
 				'id' => $prefix . 'sajto',
@@ -95,7 +95,7 @@ function product_metaboxes( $meta_boxes ) {
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
-						
+
 			array(
 				'name' => __('Date'),
 				'id' => $prefix . 'date',
@@ -107,13 +107,13 @@ function product_metaboxes( $meta_boxes ) {
 				'id' => $prefix . 'price',
 				'type' => 'text_small'
 			),
-			
+
 			array(
 				'name' => __('Anyag'),
 				'id' => $prefix . 'anyag',
 				'type' => 'text_medium'
 			),
-			
+
 			array(
 				'name' => __('Szélessség'),
 				'id' => $prefix . 'width',
@@ -172,8 +172,8 @@ function product_metaboxes( $meta_boxes ) {
 				'save_id' => true, // save ID using true
 				'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
 			),
-			
-			
+
+
 
 
 

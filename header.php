@@ -73,9 +73,9 @@
 			<?php get_sidebar('leftbottom'); ?>
 			<?php // wp_nav_menu( array( 'theme_location' => 'leftbottom', 'menu_class' => 'leftbottom-menu clearfix' ) ); ?>
 			<div class="menu-left-bottom-container">
-			<p>© 2013 <a href="http://ligetidesign.hu/">Ligeti Stúdió</a> <span class="sep"> | </span>
-			Minden jog fenntartva <span class="sep"> | </span>
-			Design by <a href="http://hydrogene.hu" rel="designer">Hydrogene</a></p>
+			<p>© <?= date('Y'); ?> <a href="http://ligetidesign.hu/">Ligeti Design</a> <span class="sep"> | </span>
+			Minden jog fenntartva<br>
+			Honlap: <a href="http://hydrogene.hu" rel="designer">Hydrogene</a></p>
 			</div>
 		</header><!-- .site-header -->
 	</div><!-- .leftpanel .span3-->

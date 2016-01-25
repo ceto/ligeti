@@ -66,7 +66,7 @@ function ligeti_setup() {
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	
+
 	add_image_size( 'large21', 1600, 800, true );
 
 
@@ -77,8 +77,8 @@ function ligeti_setup() {
 	add_image_size( 'large43', 960, 720, true );
 	add_image_size( 'medium43', 480, 360, true );
 	add_image_size( 'small43', 320, 240, true );
-	
-	
+
+
 
 
 	/**
@@ -135,7 +135,7 @@ add_action( 'after_setup_theme', 'ligeti_register_custom_background' );
  * @since Ligeti 1.0
  */
 function ligeti_widgets_init() {
-	
+
 	register_sidebar( array(
 		'name'          => __( 'Main Sidebar', 'ligeti' ),
 		'id'            => 'sidebar-main',
