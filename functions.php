@@ -69,7 +69,7 @@ function ligeti_setup() {
 
 	add_image_size( 'large21', 1600, 800, true );
 
-
+	add_image_size( 'fullfree', 1920, 9999, false );
 	add_image_size( 'large169', 960, 540, true );
 	add_image_size( 'medium169', 480, 270, true );
 	add_image_size( 'small169', 320, 180, true );

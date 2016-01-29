@@ -639,6 +639,11 @@ h2 {
 #nav.opened {
   max-height: 9999px; }
 
+.site-logo {
+  max-width: 182px;
+  margin: 0 auto;
+  display: block; }
+
 #nav-toggle-cont {
   display: block;
   -webkit-box-sizing: border-box;

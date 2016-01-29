@@ -14,7 +14,7 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<article id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-				
+
 				<?php $imci = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large21' ); ?>
 				<figure class="prod-figure" style="background-image:url('<?php echo $imci[0];?>'); max-width: <?php echo $imci[1];?>;max-height: <?php echo $imci[2];?>;">
 						<!--div class="prod-nav clearfix">
@@ -24,22 +24,22 @@ get_header(); ?>
 
 
 				<header class="prod-header">
-					
+
 					<!--div class="prod-bread clearfix">
 						<ul class="breadcrumb">
 							<?php
-								
+
 								$osanya=has_term('butorok', 'prodcat')?'butorok':(has_term('epuletek','prodcat')?'epuletek':'belso-terek');
-							
+
 								//$term_list = get_the_term_list( $post->ID, 'prodcat', '<li>', '</li><li>', '</li>' );
 								//echo str_replace('?prodcat=','?prodcat='.$osanya.'#',$term_list);
-							
+
 								$product_terms = wp_get_object_terms($post->ID, 'prodcat', array('orderby'=>'count','order'=>'DESC'));
 								if(!empty($product_terms)){
 								  if(!is_wp_error( $product_terms )){
 								    foreach($product_terms as $term){
 								    	echo '<li><a href="?prodcat='.$osanya.'#'.$term->slug.'">'.$term->name.'</a></li>';
-								    }	
+								    }
 								  }
 								}
 							?>
@@ -48,8 +48,8 @@ get_header(); ?>
 
 						</ul>
 					</div-->
-					
-					
+
+
 					<h1 class="prod-title"><?php the_title(); ?></h1>
 				</header><!-- .prod-header -->
 
@@ -70,7 +70,7 @@ get_header(); ?>
 						</div-->
 						<?php the_content(); ?>
 					</div>
-				
+
 						<div class="row-fluid prod-lenyeg">
 							<div class="span7 prod-params">
 								<?php if (get_post_meta( get_the_ID(), '_cmb_alap', true )!='') :?>
@@ -96,7 +96,7 @@ get_header(); ?>
 										</span>
 									</p>
 								<?php endif; ?>
-								
+
 								<?php if (get_post_meta( get_the_ID(), '_cmb_anyag', true )!='') :?>
 									<p>
 										<span class="name">Anyaga:</span>
@@ -123,13 +123,13 @@ get_header(); ?>
 							<div class="prod-priceblock">
 									<span class="ar">~Ár:</span>
 									<span class="prod-price"><?php echo get_post_meta( get_the_ID(), '_cmb_price', true ); ?></span>
-									<span class="penz">,- Ft</span> 
+									<span class="penz">,- Ft</span>
 									<a class="ib" href="#" data-trigger="hover" title="Miért nincs pontos ár?" data-toggle="popover"  data-content="Ide jön a magyarázkodás a hozzávetőleges árról.">
 										<i class="icon-info-sign"></i>
 									</a>
-							
 
-							</div>	
+
+							</div>
 							<?php endif; ?>
 							<!--div class="prod-actionblock">
 								<button class="btn btn-inverse">Kapcsolatfelvétel</button>
@@ -141,7 +141,7 @@ get_header(); ?>
 
 
 
-					
+
 				</div><!-- .prod-content -->
 
 				<?php if(get_post_meta( get_the_ID(), '_cmb_photo_1', true ) !='')  : ?>
@@ -150,9 +150,9 @@ get_header(); ?>
 					<ul class="gallery clearfix">
 					<?php $k=0; while ( ($k<13) && (get_post_meta( get_the_ID(), '_cmb_photo_'.++$k, true ) !='')  ): ?>
 					 <li class="">
-					 	<?php 
-					 		$tsrc = wp_get_attachment_image_src( get_post_meta( get_the_ID(), '_cmb_photo_'.$k.'_id', true ), 'medium43', false ) ; 
-					 		$tlnk = wp_get_attachment_image_src( get_post_meta( get_the_ID(), '_cmb_photo_'.$k.'_id', true ), 'large43', false ) ; 
+					 	<?php
+					 		$tsrc = wp_get_attachment_image_src( get_post_meta( get_the_ID(), '_cmb_photo_'.$k.'_id', true ), 'medium43', false ) ;
+					 		$tlnk = wp_get_attachment_image_src( get_post_meta( get_the_ID(), '_cmb_photo_'.$k.'_id', true ), 'fullfree', false ) ;
 					 	?>
 					 	<figure class="prod-thumb">
 						 	<a href="<?php echo $tlnk[0] ; ?>">
@@ -165,14 +165,14 @@ get_header(); ?>
 				</div>
 				<?php endif; ?>
 
-				
 
-					<?php 
+
+					<?php
 					$the_related=new WP_Query( array(
-											'post_type' => 'product', 
-											'taxonomy' => 'prodcat', 
+											'post_type' => 'product',
+											'taxonomy' => 'prodcat',
 											'post__not_in' => array( $post->ID ),
-											'term' => $term->slug 
+											'term' => $term->slug
 
 											) );
 					?>
@@ -208,10 +208,10 @@ get_header(); ?>
 	</div><!-- #primary -->
 <?php get_footer(); ?>
 <script>
-	
+
 
 	$('.prod-gallery').magnificPopup({
-  		delegate: 'a', 
+  		delegate: 'a',
  		type: 'image',
  		gallery:{enabled:true},
 	});
